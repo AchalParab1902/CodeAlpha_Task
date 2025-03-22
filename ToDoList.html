@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <style>
+        body{
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+
+        }
+      .box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+   
+    width: 350px;
+    text-align: center;
+    /* border:3px solid blue; */
+   
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 2px 2px 2px blue, -2px -2px 2px blue;
+      }
+      .box2 {
+        /* margin: 10px 20px 10px -60px;
+        padding: 20px 50px 20px 5px; */
+      }
+      ol{
+        list-style-position: inside;
+        padding: 0;
+      }
+      button{
+       margin-left: 10px;
+       border-radius: 2px;
+      }
+      li{
+        margin-bottom: 10px;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>TO-DO List</h2>
+      <div class="box2">
+        <input
+          class="task"
+          onkeyup="onKeyUp()"
+          id="new-task"
+          type="text"
+          placeholder="Enter a Task"
+        />
+        <button class="task" onclick="addtask()">Add Task</button>
+      </div>
+      <div id="error" style="color: red"></div>
+      <ol id="list"></ol>
+    
+    <script>
+      const list = document.getElementById("list");
+      const input = document.getElementById("new-task");
+      const error = document.getElementById("error");
+
+      console.log(list);
+      function addtask() {
+        if (input.value != "") {
+          const newLi = document.createElement("li");
+          newLi.innerText = input.value;
+          const delBtn = document.createElement("button");
+          delBtn.innerText = "Delete";
+
+          delBtn.onclick = removeTask;
+          newLi.appendChild(delBtn);
+
+          list.appendChild(newLi);
+          input.value = "";
+        } else {
+          error.innerText = "please enter task";
+        }
+      }
+
+      function onKeyUp() {
+        if (input.value != "") {
+          error.innerText = "";
+        } else {
+          error.innerText = "please enter task";
+        }
+      }
+
+      function removeTask(event) {
+        console.log(event.target);
+        event.target.parentElement.remove();
+      }
+    </script>
+    </div>
+  </body>
+</html>
