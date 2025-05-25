@@ -1,0 +1,8 @@
+[
+    { "title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "category": "Classic" },
+    { "title": "Sapiens", "author": "Yuval Noah Harari", "category": "History" },
+    { "title": "To Kill a Mockingbird", "author": "Harper Lee", "category": "Classic" },
+    { "title": "Harry Potter and the Sorcerer's Stone", "author": "J.K. Rowling", "category": "Fantasy" },
+    { "title": "The Lean Startup", "author": "Eric Ries", "category": "Business" },
+    { "title": "Becoming", "author": "Michelle Obama", "category": "Biography" }
+]
